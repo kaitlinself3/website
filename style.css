@@ -1,0 +1,201 @@
+/*  ROOT COLORS (LIGHT MODE - LAVENDER GRADIENT) */
+:root {
+  --bg: linear-gradient(135deg, #CFA7FA, #A355FA, #673AB7);
+  --card: #ffffff;
+  --text: #2a1f3d;
+  --accent: #7c3aed;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* 🌙 DARK MODE (FIXED: applies to html via .dark) */
+.dark {
+  --bg: linear-gradient(135deg, #140f1f, #2a1f3d, #3b0a64);
+  --card: #1e1830;
+  --text: #f3e8ff;
+  --accent: #a855f7;
+  --shadow: rgba(0, 0, 0, 0.4);
+}
+
+/*  SMOOTH TRANSITIONS /
+* {
+  transition: background 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/*  BASE */
+body {
+  margin: 0;
+  font-family: 'Happy Monkey', cursive;
+  background: var(--bg);
+  background-attachment: fixed;
+  background-size: cover; /* ADDED */
+  color: var(--text);
+  transition: 0.4s ease;
+}
+
+/* HEADER */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: var(--card);
+  box-shadow: 0 4px 10px var(--shadow);
+  border-radius: 0 0 20px 20px;
+}
+
+/* DARK MODE BUTTON */
+.site-header button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.site-header button:hover {
+  transform: scale(1.05);
+}
+
+/* 🔹 BRAND */
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+/*  HEADSHOT */
+.headshot {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px var(--shadow);
+  transition: 0.3s;
+}
+
+.headshot:hover {
+  transform: scale(1.1);
+}
+
+/* 🔹 NAVIGATION */
+.site-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+/*  ACTIVE + HOVER EFFECT */
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--accent);
+  text-shadow: 0 0 8px var(--accent);
+}
+
+/* CONTENT AREA */
+.page-content {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/*  CARD */
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px var(--shadow);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/*  SCROLL ANIMATION */
+.animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s;
+}
+
+.animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*  BIO IMAGE */
+.bio-img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px var(--shadow);
+  transition: 0.3s;
+}
+
+.bio-img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/*  DESIGN GRID */
+.design-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.design-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.design-item img {
+  width: 100%;
+  display: block;
+  transition: 0.4s;
+}
+
+.design-item:hover img {
+  transform: scale(1.1);
+}
+
+/* 🟣 OVERLAY TEXT */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.design-item:hover .overlay {
+  opacity: 1;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .site-nav {
+    flex-wrap: wrap;
+  }
+}
